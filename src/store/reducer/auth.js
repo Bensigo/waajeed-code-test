@@ -12,7 +12,8 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case USER_SESSION:
-      return { ...state, authUser: action.payload };
+     const payload = JSON.parse(localStorage.getItem("user"));
+      return { ...state, authUser: payload };
     default:
       return state;
   }

@@ -9,4 +9,7 @@ const reducer = combineReducers({
 })
 
 const middleware = applyMiddleware(logger, thunk);
-const store = createStore(reducer, middleware);
+export const makeStore = () => {
+  const store = createStore(reducer, middleware);
+  return store;
+}
